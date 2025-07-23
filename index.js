@@ -2,7 +2,13 @@ var btn = document.querySelectorAll(".drum").length;
 for(var i = 0; i < btn ; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function(){
         var pressButton = this.textContent;
-        switch (pressButton) {
+        sound(pressButton);
+    });
+    document.addEventlistener('keypress',function(event){
+        sound(event.key);
+    });
+    function sound(key){
+            switch (key) {
             case 'w':
                 var audio = new Audio('sounds/crash.mp3');
                 audio.play();
@@ -35,7 +41,6 @@ for(var i = 0; i < btn ; i++){
                 console.log(pressButton);
                 break;
         }
-});
 }
 
 
