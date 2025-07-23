@@ -2,14 +2,17 @@ var btn = document.querySelectorAll(".drum").length;
 for(var i = 0; i < btn ; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function(){
         var pressButton = this.textContent;
-        tap(pressButton);
+        sound(pressButton);
+        buttonAnimation(pressButton);
     });
     document.addEventListener("keypress", function(event){
-        tap(event.key);
+        sound(event.key);
+        buttonAnimation(event.key);
     });
 }
-
-function tap(key) {
+ 
+//Function For Sound
+function sound(key) {
         switch (key) {
         case 'w':
                 var audio = new Audio('sounds/crash.mp3');
@@ -43,4 +46,15 @@ function tap(key) {
                 console.log(pressButton);
                 break;
         }
+}
+
+//Function to Style the Button when pressed
+function buttonAnimation(x) {
+    var button = document.querySelector('.'+x);
+    button.classList.add("pressed");
+    setTimeout(function() {    
+        button.classList.remove("pressed");
+     },
+     "100" 
+    );
 }
