@@ -1,4 +1,5 @@
-var btn = document.querySelectorAll(".drum").length;
+alert('javasript Works');
+/*var btn = document.querySelectorAll(".drum").length;
 for(var i = 0; i < btn ; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function(){
         var pressButton = this.textContent;
@@ -43,4 +44,4 @@ function tap(key) {
                 console.log(pressButton);
                 break;
         }
-}
+}*/
