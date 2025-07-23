@@ -2,14 +2,16 @@ var btn = document.querySelectorAll(".drum").length;
 for(var i = 0; i < btn ; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function(){
         var pressButton = this.textContent;
-        sound(pressButton);
+        tap(pressButton);
     });
-    document.addEventlistener('keypress',function(event){
-        sound(event.key);
+    document.addEventListener("keypress", function(event){
+        tap(event.key);
     });
-    function sound(key){
-            switch (key) {
-            case 'w':
+}
+
+function tap(key) {
+        switch (key) {
+        case 'w':
                 var audio = new Audio('sounds/crash.mp3');
                 audio.play();
                 break;
@@ -42,7 +44,3 @@ for(var i = 0; i < btn ; i++){
                 break;
         }
 }
-
-
-    //var audio = new Audio('sounds/crash.mp3');
-    //audio.play();
